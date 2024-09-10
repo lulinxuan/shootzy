@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB0FDD9D2BA0B95E00B0C0E5 /* FixedSizeQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0FDD9C2BA0B95E00B0C0E5 /* FixedSizeQueue.swift */; };
+		FB1C118A2BA2EE3100995E2C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C11892BA2EE3100995E2C /* SettingView.swift */; };
+		FB329F832BBECA8F00304C31 /* BasketballPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB329F822BBECA8F00304C31 /* BasketballPanel.swift */; };
+		FB329F8D2BC14C4100304C31 /* Basketball_Hoop_Panel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FB329F8C2BC14C4100304C31 /* Basketball_Hoop_Panel.usdz */; };
+		FB3AC92A2BA8AEDF004BDA66 /* IBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AC9292BA8AEDF004BDA66 /* IBullet.swift */; };
+		FB3AC92C2BA8AF69004BDA66 /* JinxsBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3AC92B2BA8AF69004BDA66 /* JinxsBullet.swift */; };
+		FB3FCECA2BA59374002ABEBC /* GunSpecSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3FCEC92BA59374002ABEBC /* GunSpecSettingView.swift */; };
+		FB3FCECC2BA595BD002ABEBC /* SettingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3FCECB2BA595BD002ABEBC /* SettingMenuItem.swift */; };
+		FB3FCECE2BA59FBF002ABEBC /* TargetSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3FCECD2BA59FBF002ABEBC /* TargetSettingView.swift */; };
+		FB4E3D1B2B9C464100C2EEE3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E3D1A2B9C464100C2EEE3 /* Model.swift */; };
+		FB53E57F2BC6397200A041E4 /* TennisRacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53E57E2BC6397200A041E4 /* TennisRacket.swift */; };
+		FB53E5812BC6447F00A041E4 /* Tennis_Racket_Wilson_Blade.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FB53E5802BC6447F00A041E4 /* Tennis_Racket_Wilson_Blade.usdz */; };
+		FB5498062BA9FBFA00E9905C /* PepsiBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5498052BA9FBFA00E9905C /* PepsiBullet.swift */; };
+		FB5498082BAA072B00E9905C /* MetalBallBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5498072BAA072B00E9905C /* MetalBallBullet.swift */; };
+		FB689AF82BA9786B0006504F /* PepsiGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB689AF72BA9786B0006504F /* PepsiGun.swift */; };
+		FB689AFA2BA9787D0006504F /* PinkGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB689AF92BA9787D0006504F /* PinkGun.swift */; };
+		FB689AFC2BA9788A0006504F /* PortalGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB689AFB2BA9788A0006504F /* PortalGun.swift */; };
+		FB689AFE2BA978980006504F /* StylizedOldGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB689AFD2BA978980006504F /* StylizedOldGun.swift */; };
+		FB689B002BA978AB0006504F /* TracersGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB689AFF2BA978AB0006504F /* TracersGun.swift */; };
+		FB694A3F2B973E39002D3FF4 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = FB694A3E2B973E39002D3FF4 /* RealityKitContent */; };
+		FB694A412B973E39002D3FF4 /* GunShotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694A402B973E39002D3FF4 /* GunShotApp.swift */; };
+		FB694A472B973E39002D3FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB694A462B973E39002D3FF4 /* Assets.xcassets */; };
+		FB694A522B973EB2002D3FF4 /* HandSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694A512B973EB2002D3FF4 /* HandSpace.swift */; };
+		FB694A542B973EC8002D3FF4 /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694A532B973EC8002D3FF4 /* TrackingModel.swift */; };
+		FB8BF6572BAA78DE00115350 /* PortalBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8BF6562BAA78DE00115350 /* PortalBullet.swift */; };
+		FB95C6912BBCE30E00D451FE /* DartGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95C6902BBCE30E00D451FE /* DartGun.swift */; };
+		FB95C6932BBCE34300D451FE /* DartBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95C6922BBCE34300D451FE /* DartBullet.swift */; };
+		FB95C6962BBE7C7500D451FE /* IObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95C6952BBE7C7500D451FE /* IObject.swift */; };
+		FB95C6982BBE7CDF00D451FE /* DartBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95C6972BBE7CDF00D451FE /* DartBoard.swift */; };
+		FB95C69A2BBE809300D451FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95C6992BBE809300D451FE /* Extensions.swift */; };
+		FB95C69C2BBE8A0700D451FE /* BasketballGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95C69B2BBE8A0700D451FE /* BasketballGun.swift */; };
+		FB95C69E2BBE8A4A00D451FE /* BasketballBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95C69D2BBE8A4A00D451FE /* BasketballBullet.swift */; };
+		FB9FBCD62BA34A190042723A /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FBCD52BA34A190042723A /* Cube.swift */; };
+		FBB91EC02BC17840000B6317 /* crossbow.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FBB91EBF2BC17840000B6317 /* crossbow.usdz */; };
+		FBB91EC22BC18870000B6317 /* Crossbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB91EC12BC18870000B6317 /* Crossbow.swift */; };
+		FBB91EC42BC18DB2000B6317 /* ArrowBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB91EC32BC18DB2000B6317 /* ArrowBullet.swift */; };
+		FBBCA2E82BA608FA0054A528 /* BallBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBCA2E72BA608FA0054A528 /* BallBullet.swift */; };
+		FBBE36DC2BA5408300AD0A91 /* ToyGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE36DB2BA5408300AD0A91 /* ToyGun.swift */; };
+		FBBE36DE2BA5448500AD0A91 /* IGun.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE36DD2BA5448500AD0A91 /* IGun.swift */; };
+		FBC2EE242BA17B7A00983410 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC2EE232BA17B7A00983410 /* Triangle.swift */; };
+		FBD8D2D82B9F565D00EAB1D7 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD8D2D72B9F565D00EAB1D7 /* Ray.swift */; };
+		FBE16A152BA76E4F00C0A6C8 /* MetalSettingbuttonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE16A132BA76E4F00C0A6C8 /* MetalSettingbuttonView.swift */; };
+		FBE16A162BA76E4F00C0A6C8 /* MetalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE16A142BA76E4F00C0A6C8 /* MetalViewModel.swift */; };
+		FBE16A182BA7709C00C0A6C8 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = FBE16A172BA7709C00C0A6C8 /* Shaders.metal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FB0FDD9C2BA0B95E00B0C0E5 /* FixedSizeQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSizeQueue.swift; sourceTree = "<group>"; };
+		FB1C11892BA2EE3100995E2C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		FB329F822BBECA8F00304C31 /* BasketballPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballPanel.swift; sourceTree = "<group>"; };
+		FB329F8C2BC14C4100304C31 /* Basketball_Hoop_Panel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Basketball_Hoop_Panel.usdz; sourceTree = "<group>"; };
+		FB3AC9292BA8AEDF004BDA66 /* IBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBullet.swift; sourceTree = "<group>"; };
+		FB3AC92B2BA8AF69004BDA66 /* JinxsBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinxsBullet.swift; sourceTree = "<group>"; };
+		FB3FCEC92BA59374002ABEBC /* GunSpecSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunSpecSettingView.swift; sourceTree = "<group>"; };
+		FB3FCECB2BA595BD002ABEBC /* SettingMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingMenuItem.swift; sourceTree = "<group>"; };
+		FB3FCECD2BA59FBF002ABEBC /* TargetSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettingView.swift; sourceTree = "<group>"; };
+		FB4E3D1A2B9C464100C2EEE3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FB53E57E2BC6397200A041E4 /* TennisRacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisRacket.swift; sourceTree = "<group>"; };
+		FB53E5802BC6447F00A041E4 /* Tennis_Racket_Wilson_Blade.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Tennis_Racket_Wilson_Blade.usdz; sourceTree = "<group>"; };
+		FB5498052BA9FBFA00E9905C /* PepsiBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PepsiBullet.swift; sourceTree = "<group>"; };
+		FB5498072BAA072B00E9905C /* MetalBallBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBallBullet.swift; sourceTree = "<group>"; };
+		FB689AF72BA9786B0006504F /* PepsiGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PepsiGun.swift; sourceTree = "<group>"; };
+		FB689AF92BA9787D0006504F /* PinkGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkGun.swift; sourceTree = "<group>"; };
+		FB689AFB2BA9788A0006504F /* PortalGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalGun.swift; sourceTree = "<group>"; };
+		FB689AFD2BA978980006504F /* StylizedOldGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylizedOldGun.swift; sourceTree = "<group>"; };
+		FB689AFF2BA978AB0006504F /* TracersGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracersGun.swift; sourceTree = "<group>"; };
+		FB694A392B973E39002D3FF4 /* GunShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GunShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB694A3D2B973E39002D3FF4 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		FB694A402B973E39002D3FF4 /* GunShotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunShotApp.swift; sourceTree = "<group>"; };
+		FB694A462B973E39002D3FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB694A4B2B973E39002D3FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB694A512B973EB2002D3FF4 /* HandSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSpace.swift; sourceTree = "<group>"; };
+		FB694A532B973EC8002D3FF4 /* TrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModel.swift; sourceTree = "<group>"; };
+		FB8BF6562BAA78DE00115350 /* PortalBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalBullet.swift; sourceTree = "<group>"; };
+		FB95C6902BBCE30E00D451FE /* DartGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartGun.swift; sourceTree = "<group>"; };
+		FB95C6922BBCE34300D451FE /* DartBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartBullet.swift; sourceTree = "<group>"; };
+		FB95C6952BBE7C7500D451FE /* IObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IObject.swift; sourceTree = "<group>"; };
+		FB95C6972BBE7CDF00D451FE /* DartBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DartBoard.swift; sourceTree = "<group>"; };
+		FB95C6992BBE809300D451FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FB95C69B2BBE8A0700D451FE /* BasketballGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballGun.swift; sourceTree = "<group>"; };
+		FB95C69D2BBE8A4A00D451FE /* BasketballBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballBullet.swift; sourceTree = "<group>"; };
+		FB9FBCD52BA34A190042723A /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		FBB91EBF2BC17840000B6317 /* crossbow.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = crossbow.usdz; sourceTree = "<group>"; };
+		FBB91EC12BC18870000B6317 /* Crossbow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crossbow.swift; sourceTree = "<group>"; };
+		FBB91EC32BC18DB2000B6317 /* ArrowBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowBullet.swift; sourceTree = "<group>"; };
+		FBBCA2E72BA608FA0054A528 /* BallBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallBullet.swift; sourceTree = "<group>"; };
+		FBBE36DB2BA5408300AD0A91 /* ToyGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyGun.swift; sourceTree = "<group>"; };
+		FBBE36DD2BA5448500AD0A91 /* IGun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGun.swift; sourceTree = "<group>"; };
+		FBC2EE232BA17B7A00983410 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		FBD8D2D72B9F565D00EAB1D7 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		FBE16A132BA76E4F00C0A6C8 /* MetalSettingbuttonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSettingbuttonView.swift; sourceTree = "<group>"; };
+		FBE16A142BA76E4F00C0A6C8 /* MetalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewModel.swift; sourceTree = "<group>"; };
+		FBE16A172BA7709C00C0A6C8 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB694A362B973E39002D3FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB694A3F2B973E39002D3FF4 /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB1C11862BA1F6DC00995E2C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FB95C6942BBE7C6300D451FE /* object */,
+				FB3AC9282BA8AEC4004BDA66 /* bullet */,
+				FBBE36DA2BA5407500AD0A91 /* gun */,
+				FB3FCECB2BA595BD002ABEBC /* SettingMenuItem.swift */,
+				FBD8D2D72B9F565D00EAB1D7 /* Ray.swift */,
+				FB0FDD9C2BA0B95E00B0C0E5 /* FixedSizeQueue.swift */,
+				FBC2EE232BA17B7A00983410 /* Triangle.swift */,
+				FB95C6992BBE809300D451FE /* Extensions.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		FB329F922BC157D800304C31 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FB53E5802BC6447F00A041E4 /* Tennis_Racket_Wilson_Blade.usdz */,
+				FBB91EBF2BC17840000B6317 /* crossbow.usdz */,
+				FB329F8C2BC14C4100304C31 /* Basketball_Hoop_Panel.usdz */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FB3AC9282BA8AEC4004BDA66 /* bullet */ = {
+			isa = PBXGroup;
+			children = (
+				FBBCA2E72BA608FA0054A528 /* BallBullet.swift */,
+				FB3AC9292BA8AEDF004BDA66 /* IBullet.swift */,
+				FB3AC92B2BA8AF69004BDA66 /* JinxsBullet.swift */,
+				FB5498052BA9FBFA00E9905C /* PepsiBullet.swift */,
+				FB5498072BAA072B00E9905C /* MetalBallBullet.swift */,
+				FB8BF6562BAA78DE00115350 /* PortalBullet.swift */,
+				FB95C6922BBCE34300D451FE /* DartBullet.swift */,
+				FB95C69D2BBE8A4A00D451FE /* BasketballBullet.swift */,
+				FBB91EC32BC18DB2000B6317 /* ArrowBullet.swift */,
+			);
+			path = bullet;
+			sourceTree = "<group>";
+		};
+		FB3FCEC82BA59341002ABEBC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FBE16A172BA7709C00C0A6C8 /* Shaders.metal */,
+				FBE16A132BA76E4F00C0A6C8 /* MetalSettingbuttonView.swift */,
+				FBE16A142BA76E4F00C0A6C8 /* MetalViewModel.swift */,
+				FB1C11892BA2EE3100995E2C /* SettingView.swift */,
+				FB3FCEC92BA59374002ABEBC /* GunSpecSettingView.swift */,
+				FB3FCECD2BA59FBF002ABEBC /* TargetSettingView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FB694A302B973E38002D3FF4 = {
+			isa = PBXGroup;
+			children = (
+				FB694A3B2B973E39002D3FF4 /* GunShot */,
+				FB694A3C2B973E39002D3FF4 /* Packages */,
+				FB694A3A2B973E39002D3FF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB694A3A2B973E39002D3FF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB694A392B973E39002D3FF4 /* GunShot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB694A3B2B973E39002D3FF4 /* GunShot */ = {
+			isa = PBXGroup;
+			children = (
+				FB3FCEC82BA59341002ABEBC /* views */,
+				FB1C11862BA1F6DC00995E2C /* models */,
+				FB694A402B973E39002D3FF4 /* GunShotApp.swift */,
+				FB694A462B973E39002D3FF4 /* Assets.xcassets */,
+				FB694A4B2B973E39002D3FF4 /* Info.plist */,
+				FB694A512B973EB2002D3FF4 /* HandSpace.swift */,
+				FB694A532B973EC8002D3FF4 /* TrackingModel.swift */,
+				FB4E3D1A2B9C464100C2EEE3 /* Model.swift */,
+				FB329F922BC157D800304C31 /* model */,
+			);
+			path = GunShot;
+			sourceTree = "<group>";
+		};
+		FB694A3C2B973E39002D3FF4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				FB694A3D2B973E39002D3FF4 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		FB95C6942BBE7C6300D451FE /* object */ = {
+			isa = PBXGroup;
+			children = (
+				FB95C6952BBE7C7500D451FE /* IObject.swift */,
+				FB9FBCD52BA34A190042723A /* Cube.swift */,
+				FB95C6972BBE7CDF00D451FE /* DartBoard.swift */,
+				FB329F822BBECA8F00304C31 /* BasketballPanel.swift */,
+			);
+			path = object;
+			sourceTree = "<group>";
+		};
+		FBBE36DA2BA5407500AD0A91 /* gun */ = {
+			isa = PBXGroup;
+			children = (
+				FBBE36DD2BA5448500AD0A91 /* IGun.swift */,
+				FBBE36DB2BA5408300AD0A91 /* ToyGun.swift */,
+				FB689AF72BA9786B0006504F /* PepsiGun.swift */,
+				FB689AFB2BA9788A0006504F /* PortalGun.swift */,
+				FB689AFF2BA978AB0006504F /* TracersGun.swift */,
+				FB689AF92BA9787D0006504F /* PinkGun.swift */,
+				FB689AFD2BA978980006504F /* StylizedOldGun.swift */,
+				FB95C6902BBCE30E00D451FE /* DartGun.swift */,
+				FB95C69B2BBE8A0700D451FE /* BasketballGun.swift */,
+				FBB91EC12BC18870000B6317 /* Crossbow.swift */,
+				FB53E57E2BC6397200A041E4 /* TennisRacket.swift */,
+			);
+			path = gun;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB694A382B973E39002D3FF4 /* GunShot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB694A4E2B973E39002D3FF4 /* Build configuration list for PBXNativeTarget "GunShot" */;
+			buildPhases = (
+				FB694A352B973E39002D3FF4 /* Sources */,
+				FB694A362B973E39002D3FF4 /* Frameworks */,
+				FB694A372B973E39002D3FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GunShot;
+			packageProductDependencies = (
+				FB694A3E2B973E39002D3FF4 /* RealityKitContent */,
+			);
+			productName = GunShot;
+			productReference = FB694A392B973E39002D3FF4 /* GunShot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB694A312B973E38002D3FF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					FB694A382B973E39002D3FF4 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = FB694A342B973E38002D3FF4 /* Build configuration list for PBXProject "GunShot" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB694A302B973E38002D3FF4;
+			productRefGroup = FB694A3A2B973E39002D3FF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB694A382B973E39002D3FF4 /* GunShot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB694A372B973E39002D3FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB694A472B973E39002D3FF4 /* Assets.xcassets in Resources */,
+				FBB91EC02BC17840000B6317 /* crossbow.usdz in Resources */,
+				FB329F8D2BC14C4100304C31 /* Basketball_Hoop_Panel.usdz in Resources */,
+				FB53E5812BC6447F00A041E4 /* Tennis_Racket_Wilson_Blade.usdz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB694A352B973E39002D3FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBBE36DE2BA5448500AD0A91 /* IGun.swift in Sources */,
+				FBB91EC42BC18DB2000B6317 /* ArrowBullet.swift in Sources */,
+				FB95C69C2BBE8A0700D451FE /* BasketballGun.swift in Sources */,
+				FB0FDD9D2BA0B95E00B0C0E5 /* FixedSizeQueue.swift in Sources */,
+				FB9FBCD62BA34A190042723A /* Cube.swift in Sources */,
+				FBE16A182BA7709C00C0A6C8 /* Shaders.metal in Sources */,
+				FB95C6912BBCE30E00D451FE /* DartGun.swift in Sources */,
+				FB8BF6572BAA78DE00115350 /* PortalBullet.swift in Sources */,
+				FB694A412B973E39002D3FF4 /* GunShotApp.swift in Sources */,
+				FB694A522B973EB2002D3FF4 /* HandSpace.swift in Sources */,
+				FB95C6962BBE7C7500D451FE /* IObject.swift in Sources */,
+				FB694A542B973EC8002D3FF4 /* TrackingModel.swift in Sources */,
+				FB689B002BA978AB0006504F /* TracersGun.swift in Sources */,
+				FB4E3D1B2B9C464100C2EEE3 /* Model.swift in Sources */,
+				FB689AFC2BA9788A0006504F /* PortalGun.swift in Sources */,
+				FBBE36DC2BA5408300AD0A91 /* ToyGun.swift in Sources */,
+				FB3FCECA2BA59374002ABEBC /* GunSpecSettingView.swift in Sources */,
+				FB95C6932BBCE34300D451FE /* DartBullet.swift in Sources */,
+				FB3AC92C2BA8AF69004BDA66 /* JinxsBullet.swift in Sources */,
+				FB53E57F2BC6397200A041E4 /* TennisRacket.swift in Sources */,
+				FB5498062BA9FBFA00E9905C /* PepsiBullet.swift in Sources */,
+				FBE16A162BA76E4F00C0A6C8 /* MetalViewModel.swift in Sources */,
+				FB5498082BAA072B00E9905C /* MetalBallBullet.swift in Sources */,
+				FB3AC92A2BA8AEDF004BDA66 /* IBullet.swift in Sources */,
+				FB3FCECE2BA59FBF002ABEBC /* TargetSettingView.swift in Sources */,
+				FBC2EE242BA17B7A00983410 /* Triangle.swift in Sources */,
+				FB3FCECC2BA595BD002ABEBC /* SettingMenuItem.swift in Sources */,
+				FBE16A152BA76E4F00C0A6C8 /* MetalSettingbuttonView.swift in Sources */,
+				FB689AF82BA9786B0006504F /* PepsiGun.swift in Sources */,
+				FBD8D2D82B9F565D00EAB1D7 /* Ray.swift in Sources */,
+				FB689AFA2BA9787D0006504F /* PinkGun.swift in Sources */,
+				FBB91EC22BC18870000B6317 /* Crossbow.swift in Sources */,
+				FB1C118A2BA2EE3100995E2C /* SettingView.swift in Sources */,
+				FB95C6982BBE7CDF00D451FE /* DartBoard.swift in Sources */,
+				FB95C69E2BBE8A4A00D451FE /* BasketballBullet.swift in Sources */,
+				FB689AFE2BA978980006504F /* StylizedOldGun.swift in Sources */,
+				FB329F832BBECA8F00304C31 /* BasketballPanel.swift in Sources */,
+				FB95C69A2BBE809300D451FE /* Extensions.swift in Sources */,
+				FBBCA2E82BA608FA0054A528 /* BallBullet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FB694A4C2B973E39002D3FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		FB694A4D2B973E39002D3FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		FB694A4F2B973E39002D3FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 58CUWTN4D8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Shootzy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.llx.gunshoot.GunShoot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		FB694A502B973E39002D3FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 58CUWTN4D8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Shootzy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.llx.gunshoot.GunShoot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB694A342B973E38002D3FF4 /* Build configuration list for PBXProject "GunShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB694A4C2B973E39002D3FF4 /* Debug */,
+				FB694A4D2B973E39002D3FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB694A4E2B973E39002D3FF4 /* Build configuration list for PBXNativeTarget "GunShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB694A4F2B973E39002D3FF4 /* Debug */,
+				FB694A502B973E39002D3FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB694A3E2B973E39002D3FF4 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FB694A312B973E38002D3FF4 /* Project object */;
+}

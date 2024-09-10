@@ -1,0 +1,2174 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+reorder rootPrims = ["Root", "GridMaterial"]
+
+def Xform "Root"
+{
+    reorder nameChildren = ["toy_gun", "Sound", "pepsi_bullet", "metal_ball_bullet", "Magic_Portal", "dart_board", "basketball", "basketball_gun", "dart_gun", "dart", "rocket_1", "rocket_2", "rocket_3", "pepsi", "duck", "Jinxs_bullet", "pepsi_gun", "pink_gun", "Portal_Gun", "Stylized_Old_Gun", "Tracers_Gun_Overwatch"]
+    def "toy_gun" (
+        customData = {
+            float3 rotationEulerHint = (-0.12217283, -3.142639, 0)
+        }
+        references = @Handgun_toy.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.0005221583, -0.000031936568, 0.9981347, 0.061048534)
+        float3 xformOp:scale = (0.16, 0.16, 0.16)
+        float3 xformOp:translate = (-0.0014718994, -0.082807824, 1.4071516)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            over "uv_checker_material_uv_grid_4096x4096"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+        }
+    }
+
+    def "rocket_1" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+        references = @ToyRocket.usdz@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (2.841483, 1, -0.63780546)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = -1
+            bool gravityEnabled = 1
+            uniform token info:id = "RealityKit.RigidBody"
+            bool isCCDEnabled = 0
+            float linearDamping = -1
+            bool lockRotationY = 0
+            bool lockTranslationY = 0
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (0.07, 0.16, 0.07)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 1
+                double restitution = 1
+                double staticFriction = 1
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.14075813, 0.23484674, 0.14075813)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (-1.1175871e-8, 0.12399037, -3.7252903e-9)
+                }
+            }
+        }
+
+        over "geom"
+        {
+            over "realistic"
+            {
+                over "materials"
+                {
+                    over "usdpreviewsurface1sg"
+                    {
+                        string inputs:file6:varname (
+                            customData = {
+                                dictionary realitykit = {
+                                    float2 positionInSubgraph = (300.25, 963.5)
+                                    float2 sizeInSubgraph = (153, 53)
+                                }
+                            }
+                        )
+                        string inputs:file7:varname (
+                            customData = {
+                                dictionary realitykit = {
+                                    float2 positionInSubgraph = (512.25, 963.5)
+                                    float2 sizeInSubgraph = (152, 53)
+                                }
+                            }
+                        )
+                        string inputs:file8:varname (
+                            customData = {
+                                dictionary realitykit = {
+                                    float2 positionInSubgraph = (726.25, 963.5)
+                                    float2 sizeInSubgraph = (154, 53)
+                                }
+                            }
+                        )
+                        string inputs:file9:varname (
+                            customData = {
+                                dictionary realitykit = {
+                                    float2 positionInSubgraph = (939.25, 963.5)
+                                    float2 sizeInSubgraph = (153, 53)
+                                }
+                            }
+                        )
+                        string inputs:file10:varname (
+                            customData = {
+                                dictionary realitykit = {
+                                    float2 positionInSubgraph = (1159.25, 963.5)
+                                    float2 sizeInSubgraph = (160, 53)
+                                }
+                            }
+                        )
+                        token outputs:mtlx:surface.connect = </Root/rocket_1/geom/realistic/materials/usdpreviewsurface1sg/toy_rocket_realistic_mat_mtlx.outputs:out>
+                        token outputs:realitykit:vertex
+                        token outputs:surface.connect = </Root/rocket_1/geom/realistic/materials/usdpreviewsurface1sg/toy_rocket_realistic_mat.outputs:surface>
+                        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1372, 362)
+                        float2 ui:nodegraph:realitykit:subgraphOutputs:size = (182, 99)
+
+                        over "toy_rocket_realistic_mat_mtlx" (
+                            active = true
+                        )
+                        {
+                            float2 ui:nodegraph:node:pos = (1101.5, 362)
+                            float2 ui:nodegraph:node:size = (239, 199)
+                        }
+
+                        over "file10_mtlx"
+                        {
+                            float2 ui:nodegraph:node:pos = (304.5, 99.5)
+                            float2 ui:nodegraph:node:size = (149, 199)
+                        }
+
+                        over "Lookup_st"
+                        {
+                            float2 ui:nodegraph:node:pos = (72.5, 512)
+                            float2 ui:nodegraph:node:size = (145, 127)
+                        }
+
+                        over "file10_mtlx_scale"
+                        {
+                            float2 ui:nodegraph:node:pos = (563.5, 99.5)
+                            float2 ui:nodegraph:node:size = (61, 36)
+                        }
+
+                        over "file10_mtlx_offset"
+                        {
+                            float2 ui:nodegraph:node:pos = (822.5, 99.5)
+                            float2 ui:nodegraph:node:size = (63, 37)
+                        }
+
+                        over "file8_mtlx"
+                        {
+                            float2 ui:nodegraph:node:pos = (563.5, 777.5)
+                            float2 ui:nodegraph:node:size = (149, 199)
+                        }
+
+                        over "file6_mtlx"
+                        {
+                            float2 ui:nodegraph:node:pos = (822.5, 461.5)
+                            float2 ui:nodegraph:node:size = (149, 199)
+                        }
+
+                        over "file7_mtlx"
+                        {
+                            float2 ui:nodegraph:node:pos = (563.5, 358.5)
+                            float2 ui:nodegraph:node:size = (149, 199)
+                        }
+
+                        over "file9_mtlx"
+                        {
+                            float2 ui:nodegraph:node:pos = (304.5, 618)
+                            float2 ui:nodegraph:node:size = (149, 199)
+                        }
+
+                        over "toy_rocket_realistic_mat" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+                }
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+            float3 m_userSetLinearVelocity = (0, 0.1, 0)
+            uint m_userSetLinearVelocityVersion = 1
+        }
+
+        def RealityKitComponent "VFXEmitter"
+        {
+            uniform token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                bool isLocal = 1
+                float particleSpeed = -0.5
+
+                def RealityKitStruct "mainEmitter"
+                {
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                }
+            }
+        }
+    }
+
+    def "rocket_2" (
+        active = true
+        references = @RocketToy1.usdz@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (2.663394, 1, -0.63152593)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "RigidBody"
+        {
+            bool gravityEnabled = 1
+            uniform token info:id = "RealityKit.RigidBody"
+            bool isCCDEnabled = 0
+            bool lockRotationY = 0
+            bool lockTranslationY = 0
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (0.0336, 0.13, 0.0341)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 1
+                double restitution = 1
+                double staticFriction = 1
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.06724952, 0.2502369, 0.068151206)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0.000003958121, 0.12511845, 0.0007938016)
+                }
+            }
+        }
+
+        def RealityKitComponent "VFXEmitter"
+        {
+            uniform token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                token birthDirection = "Constant"
+                token birthLocation = "Volume"
+                float3 emissionDirection = (0, 1, 0)
+                double emissionDuration = 0.21
+                double emissionDurationVariation = 0
+                token emitterShape = "Plane"
+                double idleDuration = 0
+                double idleDurationVariation = 0
+                bool isLocal = 1
+                bool isSpawningEnabled = 1
+                bool loops = 1
+                float particleSpeed = -5
+                float particleSpeedVariation = 5
+                float3 shapeSize = (0.05, 1, 0.05)
+                bool spawnInheritParentColor = 0
+                token spawnOccasion = "OnBirth"
+                float spawnSpreadFactor = 0.2
+                float spawnSpreadFactorVariation = 0
+                float spawnVelocityFactor = 0.4
+                double warmupDuration = 0
+
+                def RealityKitStruct "mainEmitter"
+                {
+                    float3 acceleration = (0, 0, 0)
+                    token billboardMode = "Billboard"
+                    float birthRate = 3000
+                    float birthRateVariation = 1000
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    float dampingFactor = 0
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0
+                    float noiseScale = 1
+                    float noiseStrength = 4
+                    token opacityOverLife = "Constant"
+                    float particleAngle = 0
+                    float particleAngleVariation = 0
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    asset particleImage = @ParticleEmitterPresetTextures/rain.png@
+                    double particleLifeSpan = 0.04
+                    double particleLifeSpanVariation = 0.002
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.001
+                    float particleSizeVariation = 0.0005
+                    float3 radialGravityCenter = (1, 1, 0)
+                    float radialGravityStrength = 0
+                    float sizeMultiplierAtEndOfLifespan = 1
+                    float sizeMultiplierAtEndOfLifespanPower = 1
+                    token sortOrder = "IncreasingDepth"
+                    float spreadingAngle = 0.02
+                    float4 startColorA = (1, 1, 1, 0.19)
+                    float4 startColorB = (1, 1, 1, 0.14)
+                    float stretchFactor = 3
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 1
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                    float3 acceleration = (0, -3, 0)
+                    token billboardMode = "Billboard"
+                    float birthRate = 300
+                    float birthRateVariation = 0
+                    token blendMode = "Additive"
+                    float colorEvolutionPower = 1
+                    float dampingFactor = 0
+                    float4 endColorA = (0.0013309671, 0.03458923, 1, 1)
+                    float4 endColorB = (0.11386989, 0.0064959256, 0.10626237, 1)
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 0
+                    float noiseScale = 0
+                    float noiseStrength = 0
+                    token opacityOverLife = "Constant"
+                    float particleAngle = 0
+                    float particleAngleVariation = 0
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0
+                    double particleLifeSpan = 0.06
+                    double particleLifeSpanVariation = 0.004
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.0012
+                    float particleSizeVariation = 0
+                    float3 radialGravityCenter = (0, -3, -3)
+                    float radialGravityStrength = 0
+                    float sizeMultiplierAtEndOfLifespan = 1
+                    float sizeMultiplierAtEndOfLifespanPower = 1
+                    token sortOrder = "IncreasingID"
+                    float spreadingAngle = 1.2
+                    float4 startColorA = (1, 1, 1, 0.42)
+                    float4 startColorB = (1, 1, 1, 1)
+                    float stretchFactor = 0.3
+                    bool useEndColor = 0
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 0
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+            float3 m_userSetLinearVelocity = (0, 0.1, 0)
+            uint m_userSetLinearVelocityVersion = 1
+        }
+    }
+
+    def "rocket_3" (
+        active = true
+        references = @RocketToy2.usdz@
+    )
+    {
+        reorder nameChildren = ["geom", "RigidBody", "Collider", "VFXEmitter", "MotionState"]
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (2.2976074, 1, -0.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "RigidBody"
+        {
+            bool gravityEnabled = 1
+            uniform token info:id = "RealityKit.RigidBody"
+            bool isCCDEnabled = 0
+            bool lockRotationY = 0
+            bool lockTranslationY = 0
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (0.0335, 0.13, 0.0341)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 1
+                double restitution = 1
+                double staticFriction = 1
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.06724952, 0.2502369, 0.068151206)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0.000003958121, 0.12511845, 0.0007938016)
+                }
+            }
+        }
+
+        def RealityKitComponent "VFXEmitter"
+        {
+            uniform token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                token birthDirection = "Constant"
+                token birthLocation = "Surface"
+                float3 emissionDirection = (0, -1, 0)
+                double emissionDuration = 1
+                double emissionDurationVariation = 0
+                token emitterShape = "Plane"
+                double idleDuration = 0
+                double idleDurationVariation = 0
+                bool isLocal = 1
+                bool isSpawningEnabled = 0
+                bool loops = 1
+                float particleSpeed = 0.8
+                float particleSpeedVariation = 0.04
+                float3 shapeSize = (0.05, 1, 0.05)
+                bool spawnInheritParentColor = 0
+                token spawnOccasion = "OnUpdate"
+                float spawnSpreadFactor = 0
+                float spawnSpreadFactorVariation = 0
+                float spawnVelocityFactor = 1
+                double warmupDuration = 0
+
+                def RealityKitStruct "mainEmitter"
+                {
+                    float3 acceleration = (0, 0, 0)
+                    token billboardMode = "Billboard"
+                    float birthRate = 500
+                    float birthRateVariation = 10
+                    token blendMode = "Alpha"
+                    float colorEvolutionPower = 0
+                    float dampingFactor = 0
+                    float4 endColorA = (1, 1, 1, 1)
+                    float4 endColorB = (1, 1, 1, 1)
+                    bool isLightingEnabled = 0
+                    float noiseAnimationSpeed = 2
+                    float noiseScale = 1
+                    float noiseStrength = 0.03
+                    token opacityOverLife = "GradualFadeInOut"
+                    float particleAngle = 180
+                    float particleAngleVariation = 180
+                    float particleAngularVelocity = 0
+                    float particleAngularVelocityVariation = 0.5
+                    asset particleImage = @ParticleEmitterPresetTextures/snow.png@
+                    double particleLifeSpan = 3
+                    double particleLifeSpanVariation = 0.2
+                    float particleMass = 1
+                    float particleMassVariation = 0
+                    float particleSize = 0.001
+                    float particleSizeVariation = 0.002
+                    float3 radialGravityCenter = (1, 1, 0)
+                    float radialGravityStrength = 0
+                    float sizeMultiplierAtEndOfLifespan = 0.8
+                    float sizeMultiplierAtEndOfLifespanPower = 10
+                    token sortOrder = "IncreasingDepth"
+                    float spreadingAngle = 0
+                    float4 startColorA = (1, 1, 1, 1)
+                    float4 startColorB = (1, 1, 1, 1)
+                    float stretchFactor = 0
+                    bool useEndColor = 1
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 0
+                    float3 vortexDirection = (0, 1, 0)
+                    float vortexStrength = 0
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                }
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+            float3 m_userSetLinearVelocity = (0, 0.1, 0)
+            uint m_userSetLinearVelocityVersion = 1
+        }
+    }
+
+    def "pepsi" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        references = @Pepsi_Cans.usdz@
+    )
+    {
+        rel material:binding = </Root/pepsi/Materials/Pepsi_can_Cold__Wet> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.006, 0.006, 0.006)
+        float3 xformOp:translate = (3.767768, 0, -0.69368374)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Meshes"
+        {
+            over "Sketchfab_model"
+            {
+                over "Pepsi_cans_obj_cleaner_materialmerger_gles"
+                {
+                    over "Object_2" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Object_3" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Object_4"
+                    {
+                        over "Object_2"
+                        {
+                        }
+                    }
+                }
+            }
+        }
+
+        over "Materials"
+        {
+            over "Pepsi_can"
+            {
+                token outputs:surface.connect = </Root/pepsi/Materials/Pepsi_can/pbr_shader.outputs:surface>
+
+                over "pbr_shader"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/pepsi/Materials/Pepsi_can/tex_base.outputs:rgb>
+                    float inputs:metallic.connect = </Root/pepsi/Materials/Pepsi_can/tex_metallic.outputs:r>
+                    float inputs:roughness.connect = </Root/pepsi/Materials/Pepsi_can/tex_roughness.outputs:r>
+                }
+
+                over "tex_base"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can/uvset0.outputs:result>
+                }
+
+                over "tex_metallic"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can/uvset0.outputs:result>
+                }
+
+                over "tex_roughness"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can/uvset0.outputs:result>
+                }
+            }
+
+            over "Pepsi_can_Cold__Wet"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/pbr_shader.outputs:surface>
+
+                over "pbr_shader"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/tex_base.outputs:rgb>
+                    float inputs:metallic.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/tex_metallic.outputs:r>
+                    normal3f inputs:normal.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/tex_normal.outputs:rgb>
+                    float inputs:roughness.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/tex_roughness.outputs:r>
+                }
+
+                over "tex_base"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+
+                over "tex_metallic"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+
+                over "tex_roughness"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+
+                over "tex_normal"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+            }
+
+            over "Pepsi_can_Wet"
+            {
+                token outputs:surface.connect = </Root/pepsi/Materials/Pepsi_can_Wet/pbr_shader.outputs:surface>
+
+                over "pbr_shader"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/pepsi/Materials/Pepsi_can_Wet/tex_base.outputs:rgb>
+                    float inputs:metallic.connect = </Root/pepsi/Materials/Pepsi_can_Wet/tex_metallic.outputs:r>
+                    normal3f inputs:normal.connect = </Root/pepsi/Materials/Pepsi_can_Wet/tex_normal.outputs:rgb>
+                    float inputs:roughness.connect = </Root/pepsi/Materials/Pepsi_can_Wet/tex_roughness.outputs:r>
+                }
+
+                over "tex_base"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+
+                over "tex_metallic"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+
+                over "tex_roughness"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+
+                over "tex_normal"
+                {
+                    float2 inputs:st.connect = </Root/pepsi/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (9.2726, 23.553898, 9.230001)
+                float height = 23.553898
+                float radius = 4.6363
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0.00090003014, 11.776449, 0.0018007755)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = -1
+            bool gravityEnabled = 0
+            uniform token info:id = "RealityKit.RigidBody"
+            float linearDamping = -1
+            token motionType = "Dynamic"
+
+            def RealityKitStruct "massFrame"
+            {
+                float m_mass = 1
+
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (4.6, 16, 4.6)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 1
+                double staticFriction = 1
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+    }
+
+    def "duck" (
+        active = true
+        references = @Baby_duck.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.004, 0.004, 0.004)
+        float3 xformOp:translate = (3.8414402, 0, -0.2707352)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (50.006237, 56.491272, 34.011635)
+                float height = 56.491272
+                float radius = 25.003119
+                token shapeType = "Capsule"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (-1.0283451, 7.5020256, 0.25796032)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = 20
+            bool gravityEnabled = 0
+            uniform token info:id = "RealityKit.RigidBody"
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (12.58, 25, 12.58)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 1
+                double staticFriction = 1
+            }
+        }
+
+        over "Materials"
+        {
+            over "_008"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "_007"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "_011"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "_010"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "_009"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "orange"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "yellow"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+    }
+
+    def "Jinxs_bullet" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 0, 2.0943952)
+        }
+        references = @Jinxs_bullet.usdz@
+    )
+    {
+        reorder nameChildren = ["Materials", "Meshes", "Collider", "RigidBody", "MotionState", "metal_hit_sound"]
+        quatf xformOp:orient = (0.49999997, 0, 0, 0.8660254)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (10.640011, 2.3841858e-7, -7.6255665)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (300.59302, 300, 1266.4606)
+                float height = 300
+                float radius = 633.2303
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (-0.000038146973, 0.00008392334, -486.5423)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = -1
+            bool gravityEnabled = 1
+            uniform token info:id = "RealityKit.RigidBody"
+            bool isCCDEnabled = 0
+
+            def RealityKitStruct "massFrame"
+            {
+                float m_mass = 2000
+
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (150, 150, 1200)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 0.5
+                double staticFriction = 0.5
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+    }
+
+    def "pepsi_gun" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        references = @pepsi_gun.usdz@
+    )
+    {
+        reorder nameChildren = ["Materials", "_materials", "Meshes"]
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.1, 0.1, 0.1)
+        float3 xformOp:translate = (-7.2635465, 0, 4.104621)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            def "_materials" (
+                active = true
+                references = @pepsi_gun.usdz@</_materials>
+            )
+            {
+                over "material" (
+                    references = None
+                )
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+
+                over "ruchra"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+
+                over "kurok"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+
+                over "plas"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+            }
+        }
+
+        over "Meshes"
+        {
+            over "Sketchfab_model"
+            {
+                over "stvol_fbx"
+                {
+                    over "Object_2"
+                    {
+                        over "RootNode"
+                        {
+                            over "stvol"
+                            {
+                                over "stvol_ruchra_0" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/pepsi_gun/Materials/_materials/ruchra> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+
+                                over "stvol_plas_0" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/pepsi_gun/Materials/_materials/plas> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+
+                                over "stvol_kurok_0" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/pepsi_gun/Materials/_materials/kurok> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+
+                                over "stvol_but_0" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/pepsi_gun/Materials/_materials/material> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    def "pink_gun" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, -1.5707963, 0)
+        }
+        references = @pink_gun.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, 0, -0.70710677, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (-8.350321, 0, 3.9825225)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Portal_Gun" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 3.1415927, 0)
+        }
+        references = @Portal_Gun.usdz@
+    )
+    {
+        quatf xformOp:orient = (-4.371139e-8, 0, 1, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (-9.289832, 0, 3.180163)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Stylized_Old_Gun" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, -1.5707963, 0)
+        }
+        references = @Stylized_Old_Gun.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, 0, -0.70710677, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (-8.497118, 0, 7.730216)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Tracers_Gun_Overwatch" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 3.1415927, 0)
+        }
+        references = @Tracers_Gun_Overwatch.usdz@
+    )
+    {
+        quatf xformOp:orient = (-4.371139e-8, 0, 1, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (-7.8798428, 0, 7.8115416)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            over "Steel"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+        }
+    }
+
+    def Xform "Sound" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["toy_shoot_wav", "arrow_hit_wav", "bow_shoot_wav", "dart_shoot_wav", "laser_shoot_wav", "dart_wav", "basketball_wav", "metal_wall_wav", "ball_all_wav", "metal_metal_wav", "metal_target_wav", "shoot_wav", "reload_wav", "teleport_wav"]
+        def RealityKitAudioFile "reload_wav"
+        {
+            uniform asset file = @reload.wav@
+        }
+
+        def RealityKitAudioFile "shoot_wav"
+        {
+            uniform asset file = @shoot.wav@
+        }
+
+        def RealityKitAudioFile "metal_metal_wav"
+        {
+            uniform asset file = @metal_metal.wav@
+        }
+
+        def RealityKitAudioFile "metal_target_wav"
+        {
+            uniform asset file = @metal_target.wav@
+        }
+
+        def RealityKitAudioFile "ball_all_wav"
+        {
+            uniform asset file = @ball_all.wav@
+        }
+
+        def RealityKitAudioFile "metal_wall_wav"
+        {
+            uniform asset file = @metal_wall.wav@
+        }
+
+        def RealityKitAudioFile "teleport_wav"
+        {
+            uniform asset file = @teleport.wav@
+        }
+
+        def RealityKitAudioFile "basketball_wav"
+        {
+            uniform asset file = @basketball.wav@
+        }
+
+        def RealityKitAudioFile "dart_wav"
+        {
+            uniform asset file = @dart.wav@
+        }
+
+        def RealityKitAudioFile "arrow_hit_wav"
+        {
+            uniform asset file = @arrow_hit.wav@
+        }
+
+        def RealityKitAudioFile "bow_shoot_wav"
+        {
+            uniform asset file = @bow_shoot.wav@
+        }
+
+        def RealityKitAudioFile "dart_shoot_wav"
+        {
+            uniform asset file = @dart_shoot.wav@
+        }
+
+        def RealityKitAudioFile "laser_shoot_wav"
+        {
+            uniform asset file = @laser_shoot.wav@
+        }
+
+        def RealityKitAudioFile "toy_shoot_wav"
+        {
+            uniform asset file = @toy_shoot.wav@
+        }
+    }
+
+    def "pepsi_bullet" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+        references = @pepsi_bullet.usdz@
+    )
+    {
+        rel material:binding = </Root/pepsi_bullet/Materials/_materials/Pepsi_can_Cold__Wet> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.006, 0.006, 0.006)
+        float3 xformOp:translate = (3.6493783, 0, -0.69368374)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Meshes"
+        {
+            over "Sketchfab_model"
+            {
+                over "Pepsi_cans_obj_cleaner_materialmerger_gles" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Root/pepsi_bullet/Materials/_materials/Pepsi_can_Cold__Wet> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+
+                    over "Object_2" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Object_3" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Object_4"
+                    {
+                        over "Object_2"
+                        {
+                        }
+                    }
+                }
+            }
+        }
+
+        over "Materials"
+        {
+            over "Pepsi_can"
+            {
+                token outputs:surface.connect = </Root/pepsi_bullet/Materials/Pepsi_can/pbr_shader.outputs:surface>
+
+                over "pbr_shader"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/pepsi_bullet/Materials/Pepsi_can/tex_base.outputs:rgb>
+                    float inputs:metallic.connect = </Root/pepsi_bullet/Materials/Pepsi_can/tex_metallic.outputs:r>
+                    float inputs:roughness.connect = </Root/pepsi_bullet/Materials/Pepsi_can/tex_roughness.outputs:r>
+                }
+
+                over "tex_base"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can/uvset0.outputs:result>
+                }
+
+                over "tex_metallic"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can/uvset0.outputs:result>
+                }
+
+                over "tex_roughness"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can/uvset0.outputs:result>
+                }
+            }
+
+            over "Pepsi_can_Cold__Wet"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/pbr_shader.outputs:surface>
+
+                over "pbr_shader"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/tex_base.outputs:rgb>
+                    float inputs:metallic.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/tex_metallic.outputs:r>
+                    normal3f inputs:normal.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/tex_normal.outputs:rgb>
+                    float inputs:roughness.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/tex_roughness.outputs:r>
+                }
+
+                over "tex_base"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+
+                over "tex_metallic"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+
+                over "tex_roughness"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+
+                over "tex_normal"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Cold__Wet/uvset0.outputs:result>
+                }
+            }
+
+            over "Pepsi_can_Wet"
+            {
+                token outputs:surface.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/pbr_shader.outputs:surface>
+
+                over "pbr_shader"
+                {
+                    color3f inputs:diffuseColor.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/tex_base.outputs:rgb>
+                    float inputs:metallic.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/tex_metallic.outputs:r>
+                    normal3f inputs:normal.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/tex_normal.outputs:rgb>
+                    float inputs:roughness.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/tex_roughness.outputs:r>
+                }
+
+                over "tex_base"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+
+                over "tex_metallic"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+
+                over "tex_roughness"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+
+                over "tex_normal"
+                {
+                    float2 inputs:st.connect = </Root/pepsi_bullet/Materials/Pepsi_can_Wet/uvset0.outputs:result>
+                }
+            }
+
+            def "_materials" (
+                active = true
+                references = @pepsi_bullet.usdz@</_materials>
+            )
+            {
+                over "Pepsi_can_Cold__Wet"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (9.2726, 23.553898, 9.230001)
+                float height = 23.553898
+                float radius = 4.6363
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0.00090003014, 11.776449, 0.0018007755)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = -1
+            bool gravityEnabled = 0
+            uniform token info:id = "RealityKit.RigidBody"
+            float linearDamping = -1
+            token motionType = "Dynamic"
+
+            def RealityKitStruct "massFrame"
+            {
+                float m_mass = 1
+
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (4.6, 16, 4.6)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 1
+                double staticFriction = 1
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+    }
+
+    def Sphere "metal_ball_bullet" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        customData = {
+            float3 rotationEulerHint = (0.91977745, -0.55732965, -1.1877582)
+        }
+    )
+    {
+        reorder nameChildren = ["ScratchedMetallicPaint", "DefaultMaterial"]
+        rel material:binding = </Root/metal_ball_bullet/ScratchedMetallicPaint> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        double radius = 0.1
+        quatf xformOp:orient = (0.78233784, 0.2157282, -0.4430749, -0.38091147)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (13.989423, 0.0055336356, -0.31867164)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def "ScratchedMetallicPaint" (
+            active = true
+            references = @ScratchedMetallicPaint.usdz@
+        )
+        {
+            color3f inputs:Basecolor_Tint = (0.036767077, 0.6412601, 0.67058825) (
+                colorSpace = "srgb_texture"
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (-56.812614, 67.17455)
+                        float2 sizeInSubgraph = (161, 53)
+                        int stackingOrderInSubgraph = 2344
+                    }
+                }
+            )
+            float2 inputs:UV_Scale (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (-725.2588, 351.55255)
+                        float2 sizeInSubgraph = (139, 53)
+                        int stackingOrderInSubgraph = 2272
+                    }
+                }
+            )
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (182, 99)
+
+            over "Dot"
+            {
+                float2 ui:nodegraph:node:size = (44, 18)
+            }
+
+            over "multiply"
+            {
+                float2 ui:nodegraph:node:size = (61, 36)
+            }
+
+            over "add"
+            {
+                float2 ui:nodegraph:node:size = (63, 37)
+            }
+
+            over "PreviewSurface"
+            {
+                float2 ui:nodegraph:node:size = (149, 199)
+            }
+
+            over "Mix"
+            {
+                float2 ui:nodegraph:node:size = (109, 145)
+            }
+
+            over "Swizzle"
+            {
+                float2 ui:nodegraph:node:size = (133, 40)
+            }
+
+            over "Swizzle_1"
+            {
+                float2 ui:nodegraph:node:size = (145, 53)
+            }
+
+            over "Multiply_1"
+            {
+                float2 ui:nodegraph:node:size = (61, 36)
+            }
+
+            over "BaseColor"
+            {
+                float2 ui:nodegraph:node:size = (159, 235)
+            }
+
+            over "Roughness"
+            {
+                float2 ui:nodegraph:node:size = (159, 235)
+            }
+
+            over "Metallic"
+            {
+                float2 ui:nodegraph:node:size = (159, 235)
+            }
+
+            over "Normal"
+            {
+                float2 ui:nodegraph:node:size = (159, 235)
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.2, 0.2, 0.2)
+                float radius = 0.01
+                token shapeType = "Sphere"
+
+                def RealityKitStruct "pose"
+                {
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = 20
+            uniform token info:id = "RealityKit.RigidBody"
+
+            def RealityKitStruct "massFrame"
+            {
+                float m_mass = 30
+
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (0.01, 0.01, 0.01)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 0.5
+                double staticFriction = 0.5
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+    }
+
+    def "Magic_Portal" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+        references = @Magic_Portal.usdz@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (12.793068, 0, 3.295625)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            over "MagicStoneMoss"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "MagicStone"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "PortalSurface"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            def "_materials" (
+                active = true
+                references = @Magic_Portal.usdz@</_materials>
+            )
+            {
+                over "MagicStone"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+
+                over "MagicStoneMoss"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (266.19177, 268.00842, 44.986137)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0.21794891, 135.3913, -16.013603)
+                }
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+
+        over "Meshes"
+        {
+            over "Sketchfab_model"
+            {
+                over "_e5d370798dd4d69b43ee2bcb29da87d_fbx"
+                {
+                    over "RootNode"
+                    {
+                        over "PortalSurface_low" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/Magic_Portal/Materials/_materials/PortalSurface> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+
+                        over "BrickLarge_low"
+                        {
+                            over "BrickLarge_low_MagicStone_0"
+                            {
+                                over "BrickLarge_low_MagicStone_0" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/Magic_Portal/Materials/_materials/MagicStone> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+                            }
+                        }
+
+                        over "BrickSmall_low"
+                        {
+                            over "BrickSmall_low_MagicStoneMoss_0"
+                            {
+                                over "BrickSmall_low_MagicStoneMoss_0" (
+                                    prepend apiSchemas = ["MaterialBindingAPI"]
+                                )
+                                {
+                                    rel material:binding = </Root/Magic_Portal/Materials/_materials/MagicStone> (
+                                        bindMaterialAs = "weakerThanDescendants"
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            bool gravityEnabled = 0
+            uniform token info:id = "RealityKit.RigidBody"
+            token motionType = "Static"
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+            }
+        }
+    }
+
+    def "dart_gun" (
+        active = true
+        references = @dart_gun.usdz@
+    )
+    {
+        reorder nameChildren = ["Dart", "Materials", "Meshes"]
+        float3 xformOp:scale = (0.001, 0.001, 0.001)
+        float3 xformOp:translate = (14.615953, 0, 63.51119)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Meshes"
+        {
+            reorder nameChildren = ["Dart", "Sketchfab_model"]
+        }
+
+        def "Dart" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, 0, 0)
+            }
+            references = @Dart.usdz@
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.25, 0.25, 0.25)
+            float3 xformOp:translate = (-0.0009765625, 49.045345, -82.69141)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "Meshes"
+            {
+                over "Sketchfab_model"
+                {
+                    over "dart_obj_cleaner_materialmerger_gles"
+                    {
+                        over "Object_0" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Grip_Metal_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+
+                        over "Object_1" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Grip_Metal_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+
+                        over "Object_2" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Plastic_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+
+                        over "Object_3" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Tip_Metal_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            float3 xformOp:translate = (0, 0, -4.4751043e-12)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    def "dart" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+        references = @Dart.usdz@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.001, 0.001, 0.001)
+        float3 xformOp:translate = (14.827936, 0.21986468, 63.265472)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Trigger"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (68.44701, 68.44703, 583.911)
+                float height = 68.44703
+                float radius = 291.9555
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (-0.03570175, 0.035686493, -7.4921417)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            uniform token info:id = "RealityKit.RigidBody"
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (30, 30, 500)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+
+        over "Materials"
+        {
+            def "_materials" (
+                active = true
+                references = @Dart.usdz@</_materials>
+            )
+            {
+            }
+        }
+
+        over "Meshes"
+        {
+            over "Sketchfab_model"
+            {
+                over "dart_obj_cleaner_materialmerger_gles" (
+                    customData = {
+                        float3 rotationEulerHint = (0, -1.5707963, 0)
+                    }
+                )
+                {
+                    quatf xformOp:orient = (0.70710677, 0, -0.70710677, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    float3 xformOp:translate = (0, 0, -4.4751043e-12)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    over "Object_0"
+                    {
+                        over "Object_0" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Grip_Metal_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+
+                    over "Object_1"
+                    {
+                        over "Object_1" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Grip_Metal_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+
+                    over "Object_2"
+                    {
+                        over "Object_2" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Plastic_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+
+                    over "Object_3"
+                    {
+                        over "Object_3" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Root/dart/Materials/_materials/Tip_Metal_baked> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    def "dart_board" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (1.5707964, 0, 0)
+        }
+        references = @dart_board.usdz@
+    )
+    {
+        reorder nameChildren = ["Materials", "_materials", "Meshes"]
+        quatf xformOp:orient = (0.70710677, 0.70710677, 0, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (0.9077306, 0, 69.770996)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            def "_materials" (
+                active = true
+                references = @dart_board.usdz@</_materials>
+            )
+            {
+                over "plastic"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+
+                over "metal"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+
+                over "dart_board"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                }
+            }
+        }
+
+        over "Meshes"
+        {
+            over "Sketchfab_model"
+            {
+                over "dart_board_fbx"
+                {
+                    over "RootNode"
+                    {
+                        over "dart_board"
+                        {
+                            over "dart_board_plastic_0" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/dart_board/Materials/_materials/plastic> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+
+                            over "dart_board_metal_0" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                            )
+                            {
+                                rel material:binding = </Root/dart_board/Materials/_materials/metal> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                            }
+
+                            over "dart_board_dart_board_0" (
+                                prepend apiSchemas = ["MaterialBindingAPI"]
+                                customData = {
+                                    float3 rotationEulerHint = (1.4210853e-14, 0, 0)
+                                }
+                            )
+                            {
+                                rel material:binding = </Root/dart_board/Materials/_materials/dart_board> (
+                                    bindMaterialAs = "weakerThanDescendants"
+                                )
+                                quatf xformOp:orient = (1, 7.1054265e-15, 0, 0)
+                                float3 xformOp:scale = (1.0000001, 1.0000001, 1.0000001)
+                                float3 xformOp:translate = (0, 0, 0)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            bool gravityEnabled = 0
+            uniform token info:id = "RealityKit.RigidBody"
+            token motionType = "Static"
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (45.10001, 1.5500158, 45.1)
+                float height = 0.59
+                float radius = 22.550005
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0, 0.7749987, 0)
+                }
+            }
+        }
+    }
+
+    def "basketball_gun" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 3.1433802, 0)
+        }
+        references = @basketball_gun.usdz@
+    )
+    {
+        quatf xformOp:orient = (-0.00089387485, 0, 0.9999996, 0)
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (8.183143, 0, 67.86081)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "basketball" (
+        active = true
+        references = @Basketball.usdz@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (198.838, 198.48938, 199.99997)
+                float radius = 100
+                token shapeType = "Sphere"
+
+                def RealityKitStruct "pose"
+                {
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = 0
+            uniform token info:id = "RealityKit.RigidBody"
+            float linearDamping = 0
+
+            def RealityKitStruct "massFrame"
+            {
+                float m_mass = 3
+
+                def RealityKitStruct "m_pose"
+                {
+                    float3 position = (100, 100, 100)
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double restitution = 0
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+    }
+
+    def "arrow" (
+        active = true
+        prepend references = @arrow.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (-11.198009, 0, -39.160107)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Meshes"
+        {
+            over "Sketchfab_model"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                float3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                over "flecha_obj_cleaner_materialmerger_gles" (
+                    customData = {
+                        float3 rotationEulerHint = (1.5707966, 0.7853981, -4.2146844e-8)
+                    }
+                )
+                {
+                    quatf xformOp:orient = (0.6532814, 0.6532816, 0.270598, -0.2705981)
+                    float3 xformOp:scale = (1, 1, 1)
+                    float3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    over "Object_2"
+                    {
+                        over "Object_0" (
+                            customData = {
+                                float3 rotationEulerHint = (0, 0, 1.5707964)
+                            }
+                        )
+                        {
+                            quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (300.00006, 300.00006, 1999.3071)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (-10.884277, 14.434296, -323.9183)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            uniform token info:id = "RealityKit.RigidBody"
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+            }
+        }
+
+        def RealityKitComponent "MotionState"
+        {
+            uniform token info:id = "RealityKit.MotionState"
+        }
+    }
+}
+
